@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Roulette</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/swipe.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Auth Screen -->
+        <div id="auth-screen" class="screen active">
+            <h1>Food Roulette</h1>
+            <div class="auth-container">
+                <form id="auth-form">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="text" id="zipcode" placeholder="ZIP Code" required>
+                    <button type="submit">Continue</button>
+                </form>
+                <div class="session-controls" style="display: none;">
+                    <input type="text" id="join-code" placeholder="Enter Join Code">
+                    <button id="join-session">Join Session</button>
+                    <button id="create-session">Create New Session</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Swipe Screen -->
+        <div id="swipe-screen" class="screen">
+            <div class="session-info">
+                <h2>Session Code: <span id="current-session-code"></span></h2>
+                <div id="participants"></div>
+            </div>
+            <div class="swipe-container">
+                <div class="food-card">
+                    <div class="cuisine-image-container">
+                        <img id="cuisine-image" alt="Food" src="assets/images/cuisines/placeholder/placeholder-0.jpg">
+                    </div>
+                    <div class="cuisine-info">
+                        <h3 id="cuisine-type"></h3>
+                        <p id="cuisine-description"></p>
+                        <p id="cuisine-examples"></p>
+                    </div>
+                </div>
+                <div class="swipe-buttons">
+                    <button id="swipe-left" class="swipe-button">👎</button>
+                    <button id="swipe-right" class="swipe-button">👍</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <h2>Matched Restaurants</h2>
+            <div id="matched-cuisines"></div>
+            <div id="restaurant-results"></div>
+        </div>
+    </div>
+
+    <script src="js/cuisines.js"></script>
+    <script src="js/swipe.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
